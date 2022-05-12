@@ -44,16 +44,16 @@ public class flow_checkout {
         waitForXpathElement("//body/div[@id='__next']/div[1]/main[1]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/a[1]/span[1]");
         //driver.findElement(By.xpath("span.style__StyledItem-sc-18svp8n-0.fkDgwT")).click(); - duplicate class css
         driver.findElement(By.xpath("//body/div[@id='__next']/div[1]/main[1]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/a[1]/span[1]")).click();
-        waitForCSSElement("div.group-button");
         driver.findElement(By.cssSelector("div.group-button > button.btn.btn-add-to-cart")).click();
         waitForCSSElement("ul.social__items>li.social__item");
         driver.findElement(By.cssSelector("ul.social__items>li.social__item>img[alt=\"google\"]")).click();
     }
     @Test
-    public void login(){
+    public void login_Incorrect_Format_NumberPhone(int mun_phone){
+        mun_phone = 321451871;
         driver.findElement(By.cssSelector("div[data-view-id=\"header_header_account_container\"].Userstyle__Item-sc-6e6am-1.cHRIKv")).click();
         waitForCSSElement("div.input");
-        driver.findElement(By.cssSelector("input[type=tel][name=\"tel\"]")).sendKeys("2398012381423");
+        driver.findElement(By.cssSelector("input[type=tel][name=\"tel\"]")).sendKeys("num_phone");
         waitForCSSElement("span.error-mess");
         String msgError = driver.findElement(By.cssSelector("span.error-mess")).getText();
         Assert.assertEquals(msgError,"Số điện thoại không đúng định dạng.");
