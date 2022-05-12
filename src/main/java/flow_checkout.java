@@ -15,13 +15,11 @@ public class flow_checkout {
     WebDriverWait wait;
     public void waitForCSSElement(String waitConditionLocator){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        wait.until(ExpectedConditions.visibilityOfElementLocated
-                (By.cssSelector(waitConditionLocator)));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(waitConditionLocator)));
     }
     public void waitForXpathElement(String waitConditionLocator){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        wait.until(ExpectedConditions.visibilityOfElementLocated
-                (By.xpath(waitConditionLocator)));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(waitConditionLocator)));
     }
     @BeforeMethod
     public void setDriver(){
@@ -49,11 +47,11 @@ public class flow_checkout {
         driver.findElement(By.cssSelector("ul.social__items>li.social__item>img[alt=\"google\"]")).click();
     }
     @Test
-    public void login_Incorrect_Format_NumberPhone(int mun_phone){
-        mun_phone = 321451871;
+    public void login_Incorrect_Format_NumberPhone(){
+        String num_phone = "32918701561391";
         driver.findElement(By.cssSelector("div[data-view-id=\"header_header_account_container\"].Userstyle__Item-sc-6e6am-1.cHRIKv")).click();
         waitForCSSElement("div.input");
-        driver.findElement(By.cssSelector("input[type=tel][name=\"tel\"]")).sendKeys("num_phone");
+        driver.findElement(By.cssSelector("input[type=tel][name=\"tel\"]")).sendKeys(num_phone);
         waitForCSSElement("span.error-mess");
         String msgError = driver.findElement(By.cssSelector("span.error-mess")).getText();
         Assert.assertEquals(msgError,"Số điện thoại không đúng định dạng.");
