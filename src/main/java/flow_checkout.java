@@ -38,6 +38,9 @@ public class flow_checkout {
     @Test
     public void checkout(){
         driver.findElement(By.cssSelector("input.FormSearch__Input-sc-1fwg3wo-2.gBxvSE")).sendKeys("Zflip3");
+
+
+
         driver.findElement(By.cssSelector("button.FormSearch__Button-sc-1fwg3wo-3.bUpWwh")).click();
         waitForXpathElement("//body/div[@id='__next']/div[1]/main[1]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/a[1]/span[1]");
         //driver.findElement(By.xpath("span.style__StyledItem-sc-18svp8n-0.fkDgwT")).click(); - duplicate class css
