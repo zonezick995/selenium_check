@@ -59,7 +59,7 @@ public class handle_dropdown {
         driver.get("https://techydevs.com/demos/themes/html/listhub-demo/listhub/index.html");
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 
-        wait.until(ExpectedConditions.attributeToBe(By.cssSelector("div.loader-container"),"style","display: none;"));
+        wait.until(ExpectedConditions.attributeToBe(By.cssSelector("div.loader-container"),"style","dis ```````````````````````````````````````````````````````````````````````````````````````play: none;"));
         driver.findElement(By.cssSelector("div.main-search-input>div:nth-child(2)>div>a>div")).click();
         //input search
         driver.findElement(By.cssSelector("div.main-search-input>div:nth-child(2)>div>div>div>input")).sendKeys("U");
